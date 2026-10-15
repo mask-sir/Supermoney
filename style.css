@@ -1,29 +1,211 @@
-* { box-sizing: border-box; }
-:root { color-scheme: light; --ink: #17212b; --muted: #66717e; --green: #b9f52a; --blue: #3027c9; }
-html { scroll-behavior: smooth; }
-body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--ink); background: #f4f6f8; line-height: 1.5; }
-.hero { background: radial-gradient(circle at 80% 0%, #5147ee 0, transparent 38%), linear-gradient(145deg, #101820, #171c45 75%, #2821a4); color: white; padding: 34px 20px 30px; text-align: center; }
-.brand-mark { display: inline-block; font-size: 1.05rem; font-weight: 800; letter-spacing: -.04em; margin-bottom: 24px; }
-.brand-mark span { color: var(--green); }
-.eyebrow { margin: 0 0 8px; font-size: .72rem; font-weight: 800; letter-spacing: .14em; }
-.hero h1 { max-width: 650px; margin: 0 auto 12px; font-size: clamp(2rem, 7vw, 3.5rem); line-height: 1.08; letter-spacing: -.04em; }
-.intro { max-width: 520px; margin: 0 auto 22px; color: #e0e5ff; font-size: 1rem; }
-.download-btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: min(100%, 390px); min-height: 56px; margin: 0 auto; padding: 14px 18px; border-radius: 14px; background: var(--green); color: #101820; text-decoration: none; font-size: 1rem; font-weight: 850; box-shadow: 0 8px 24px #0003; }
-.download-btn:focus-visible, .scroll-link:focus-visible, .back-top:focus-visible { outline: 3px solid white; outline-offset: 4px; }
-.download-btn svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.helper { max-width: 420px; margin: 11px auto 20px; color: #cbd2f5; font-size: .78rem; }
-.scroll-link { display: inline-block; color: white; text-decoration: none; font-weight: 650; font-size: .9rem; padding: 8px; }
-.scroll-link span { color: var(--green); font-size: 1.2em; margin-left: 4px; }
-main { width: min(100%, 900px); margin: 0 auto; padding: 26px 12px 12px; }
-.guide-heading { padding: 12px 8px 18px; }
-.guide-heading .eyebrow { color: #5048df; }
-.guide-heading h2 { margin: 0 0 8px; font-size: clamp(1.5rem, 5vw, 2.2rem); line-height: 1.15; letter-spacing: -.03em; }
-.guide-heading p:last-child { color: var(--muted); margin: 0; }
-.pages { display: grid; gap: 18px; }
-.page { margin: 0; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 14px #1523380c; }
-.page img { display: block; width: 100%; height: auto; }
-.page figcaption { padding: 7px 12px; text-align: center; color: #7a8490; font-size: .75rem; background: #fff; }
-footer { width: min(100%, 900px); margin: 0 auto; padding: 24px 20px 36px; text-align: center; color: var(--muted); font-size: .8rem; }
-.back-top { display: inline-block; margin-bottom: 12px; color: #3027c9; font-weight: 750; text-decoration: none; }
-footer p { max-width: 650px; margin: 0 auto; }
-@media (min-width: 700px) { .hero { padding: 48px 28px 38px; } main { padding: 36px 20px 20px; } .pages { gap: 24px; } .page { border-radius: 16px; } }
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  background: #f4f6f8;
+  color: #17212b;
+  line-height: 1.6;
+}
+
+.hero {
+  background: linear-gradient(145deg, #101820, #3027c9);
+  color: white;
+  text-align: center;
+  padding: 40px 20px 32px;
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 28px;
+}
+
+.brand span {
+  color: #b9f52a;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #5048df;
+}
+
+.hero .eyebrow {
+  color: #b9f52a;
+}
+
+h1 {
+  max-width: 650px;
+  margin: 12px auto;
+  font-size: clamp(30px, 7vw, 48px);
+  line-height: 1.15;
+}
+
+.intro {
+  max-width: 500px;
+  margin: 16px auto 24px;
+  color: #e1e5ff;
+}
+
+.download-btn {
+  display: block;
+  width: 100%;
+  max-width: 380px;
+  margin: auto;
+  padding: 16px;
+  border-radius: 12px;
+  background: #b9f52a;
+  color: #101820;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+.small {
+  font-size: 12px;
+  color: #d4d8f5;
+}
+
+.scroll-link {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 24px 12px;
+}
+
+.heading {
+  padding: 10px 6px 20px;
+}
+
+.heading h2,
+.kyc h2,
+.success h2 {
+  font-size: clamp(24px, 5vw, 34px);
+  line-height: 1.2;
+}
+
+.heading p:last-child {
+  color: #66717e;
+}
+
+.pages {
+  display: grid;
+  gap: 18px;
+}
+
+.page {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 14px #0000000d;
+}
+
+.page img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page figcaption {
+  padding: 8px;
+  text-align: center;
+  font-size: 12px;
+  color: #66717e;
+}
+
+.kyc {
+  padding: 24px 18px;
+  border-radius: 14px;
+  background: white;
+  border: 1px solid #e4e7ee;
+}
+
+.kyc ol {
+  padding-left: 22px;
+}
+
+.kyc li {
+  padding: 5px 0 5px 3px;
+}
+
+.note {
+  margin-top: 22px;
+  padding: 16px;
+  border-left: 4px solid #5048df;
+  border-radius: 10px;
+  background: #f0efff;
+}
+
+.note h3 {
+  margin-top: 0;
+}
+
+.success {
+  margin-top: 24px;
+  padding: 28px 18px;
+  border-radius: 14px;
+  background: #edffcf;
+  text-align: center;
+}
+
+.check {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin: auto;
+  border-radius: 50%;
+  background: #b9f52a;
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.success p {
+  font-weight: 650;
+}
+
+footer {
+  max-width: 700px;
+  margin: auto;
+  padding: 24px 18px 36px;
+  text-align: center;
+  font-size: 13px;
+  color: #66717e;
+}
+
+footer a {
+  color: #3027c9;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+@media (min-width: 700px) {
+  main {
+    padding: 36px 20px;
+  }
+
+  .pages {
+    gap: 24px;
+  }
+
+  .kyc,
+  .success {
+    padding: 30px;
+  }
+}
